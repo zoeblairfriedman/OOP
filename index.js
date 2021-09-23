@@ -44,6 +44,27 @@ circle[propertyName]
 
 delete circle.location;
 
+//here is how we can enumerate all of the members in an object
+for (let key in circle){
+  console.log(key, circle[key])
+}
+
+//this will only return properties, not functions
+for (let key in circle){
+  if (typeof circle[key] !== 'function'){
+    console.log(key, circle[key])
+  }
+}
+
+//also to get all of the keys
+let keys = Object.keys(circle)
+console.log(keys)
+
+// to check for the existance of a property in an object
+if('radius' in circle){
+  console.log('Circle has a radius.')
+}
+
 
 // THIS IS INTERESTING! objects point to a place in memory. that is what makes it a reference type rather than a primite type!!! 
 
@@ -66,7 +87,7 @@ function increase(obj){
 }
 
 increase(obj)
-console.log(obj)
+// console.log(obj)
 
 //But this would not: 
 let num = 10
@@ -75,4 +96,4 @@ function increase(num){
 }
 
 increase(num)
-console.log(num)
+// console.log(num)
