@@ -33,3 +33,46 @@ function Circle(radius) {
 }
 
 const anotherCircle = new Circle(1);
+
+circle.location = {x:1}
+circle['alsolocation'] = {y:1}
+
+//this is where bracket notation is helpful
+const propertyName = 'location';
+circle[propertyName]
+//OR if you have special characters
+
+delete circle.location;
+
+
+// THIS IS INTERESTING! objects point to a place in memory. that is what makes it a reference type rather than a primite type!!! 
+
+let a = 10
+let b = a
+a = 20
+// b = 10
+
+
+let x = {value: 10}
+let y = x
+x.value = 20
+// y = {value: 20}
+
+
+// SIMILARLY this would work:
+let obj = {value: 10}
+function increase(obj){
+  obj.value++
+}
+
+increase(obj)
+console.log(obj)
+
+//But this would not: 
+let num = 10
+function increase(num){
+  num.value++
+}
+
+increase(num)
+console.log(num)
