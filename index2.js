@@ -11,7 +11,6 @@ console.log(person)
 function Circle(radius) {
   this.radius = radius;
   this.move = function (){
-    this.draw()
     console.log('move')
   }
 }
@@ -21,4 +20,10 @@ Circle.prototype.draw = function() {
 }
 
 
+const c1 = new Circle(1)
 
+// this will not return prototype members so draw will not return
+Object.keys(c1)
+
+// this however WILL return instance and prototype members
+for (let key in c1) console.log(key)
