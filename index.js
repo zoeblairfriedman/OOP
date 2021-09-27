@@ -63,66 +63,66 @@ anotherCircle.draw()
 
 
 
-// circle.location = {x:1}
-// circle['alsolocation'] = {y:1}
+circle.location = {x:1}
+circle['alsolocation'] = {y:1}
 
-// //this is where bracket notation is helpful
-// const propertyName = 'location';
-// circle[propertyName]
-// //OR if you have special characters
+//this is where bracket notation is helpful
+const propertyName = 'location';
+circle[propertyName]
+//OR if you have special characters
 
-// delete circle.location;
+delete circle.location;
 
-// //here is how we can enumerate all of the members in an object
-// for (let key in circle){
-//   console.log(key, circle[key])
-// }
+//here is how we can enumerate all of the members in an object
+for (let key in circle){
+  console.log(key, circle[key])
+}
 
-// //this will only return properties, not functions
-// for (let key in circle){
-//   if (typeof circle[key] !== 'function'){
-//     console.log(key, circle[key])
-//   }
-// }
+//this will only return properties, not functions
+for (let key in circle){
+  if (typeof circle[key] !== 'function'){
+    console.log(key, circle[key])
+  }
+}
 
-// //also to get all of the keys
-// let keys = Object.keys(circle)
-// console.log(keys)
+//also to get all of the keys
+let keys = Object.keys(circle)
+console.log(keys)
 
-// // to check for the existance of a property in an object
-// if('radius' in circle){
-//   console.log('Circle has a radius.')
-// }
-
-
-// // THIS IS INTERESTING! objects point to a place in memory. that is what makes it a reference type rather than a primite type!!! 
-
-// let a = 10
-// let b = a
-// a = 20
-// // b = 10
+// to check for the existance of a property in an object
+if('radius' in circle){
+  console.log('Circle has a radius.')
+}
 
 
-// let x = {value: 10}
-// let y = x
-// x.value = 20
-// // y = {value: 20}
+// THIS IS INTERESTING! objects point to a place in memory. that is what makes it a reference type rather than a primite type!!! 
+
+let a = 10
+let b = a
+a = 20
+// b = 10
 
 
-// // SIMILARLY this would work:
-// let obj = {value: 10}
-// function increase(obj){
-//   obj.value++
-// }
+let x = {value: 10}
+let y = x
+x.value = 20
+// y = {value: 20}
 
-// increase(obj)
-// // console.log(obj)
 
-// //But this would not: 
-// let num = 10
-// function increase(num){
-//   num.value++
-// }
+// SIMILARLY this would work:
+let obj = {value: 10}
+function increase(obj){
+  obj.value++
+}
 
-// increase(num)
-// // console.log(num)
+increase(obj)
+// console.log(obj)
+
+//But this would not: 
+let num = 10
+function increase(num){
+  num.value++
+}
+
+increase(num)
+// console.log(num)
